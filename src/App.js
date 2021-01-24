@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { 
   CustomHeading,
   CustomPara,
@@ -6,17 +6,24 @@ import {
   Box
 } from "./components";
 
-function App() {
+function App() { //newOneAyan1
+  const [inputText, setInputText] = useState('')
+  
+  const handleText = (e) => {
+    console.log("app.js", e.target.value)
+    setInputText(e.target.value)
+  }
 
   return(
-    <div>
+    <div style={{background:'black', height:'100vh', width:'100vw', margin:0, padding:0}}>
       <Box myColor={'yellow'}>
-         <CustomHeading rameezKaText={'Hello Dunya'} />
+         <CustomHeading rameezKaText={inputText} />
           <CustomInput
             typeArif={'email'} 
             placeHolder={'Enter your email'}
+            handleText={handleText}
           />
-          <h2>akjdslkajsldkj</h2>
+          <h2>{inputText}</h2>
       </Box>
 
       <Box myColor={'pink'}>

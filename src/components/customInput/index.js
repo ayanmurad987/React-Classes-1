@@ -1,10 +1,11 @@
 import React from 'react';
 
-function CustomInput({typeArif, placeHolder}) {
+function CustomInput(props) {
+
 
     return(
         <div>
-            <input type={typeArif} placeholder={placeHolder} />
+            <input onChange={props.handleText} type={props.typeArif} placeholder={props.placeHolder} />
         </div>
     )
 }
